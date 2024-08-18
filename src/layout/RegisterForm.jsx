@@ -3,6 +3,7 @@ import { useState } from 'react';
 import Swal from 'sweetalert2';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import 'animate.css';
 
 export default function RegisterForm() {
   const navigate = useNavigate();
@@ -34,19 +35,11 @@ export default function RegisterForm() {
         Swal.fire({
           title: "สมัครสมาชิกเรียบร้อย",
           showClass: {
-            popup: `
-              animate__animated
-              animate__fadeInUp
-              animate__faster
-            `
+            popup: 'animate__animated animate__fadeInUp animate__faster',
           },
           hideClass: {
-            popup: `
-              animate__animated
-              animate__fadeOutDown
-              animate__faster
-            `
-          }
+            popup: 'animate__animated animate__fadeOutDown animate__faster',
+          },
         });
         navigate('/');
       }
@@ -58,11 +51,11 @@ export default function RegisterForm() {
   return (
     <div className="flex items-center justify-center h-screen mt-[100px]">
       <div className="text-3xl mb-5"></div>
-      <form 
-        className="flex h-[calc(110vh-60px)] flex-col justify-center items-center outline-none border-10 w-[30rem] h-[35rem] rounded-[25px] shadow-md mt-20 transition duration-500 ease-in-out transform" 
+      <form
+        className="flex h-[calc(110vh-60px)] flex-col justify-center items-center outline-none border-10 w-[30rem] h-[35rem] rounded-[25px] shadow-md mt-20 transition duration-500 ease-in-out transform animate__animated animate__fadeIn animate__faster"
         onSubmit={hdlSubmit}
       >
-        <p className="font-semibold text-base text-[#5473E3] text-center">สมัครสมาชิก</p>
+        <p className="font-semibold text-[24px] text-[#5473E3] text-center">สมัครสมาชิก</p>
         <label className="form-control w-full max-w-xs">
           <div className="label">
             <span className="label-text">Username</span>
@@ -148,15 +141,17 @@ export default function RegisterForm() {
           />
         </label>
         <div className="flex gap-5">
-          <button type="submit" className="btn btn-outline btn-info mt-7">Submit</button>
+          <button type="submit" className="btn btn-outline btn-info mt-7 transform transition-transform duration-300 ease-in-out hover:scale-105">
+            ยืนยัน
+          </button>
         </div>
 
         <p className="text-gray-800 text-sm mt-8 text-center">
-            มีบัญชีแล้ว{' '}
-            <Link to="/" className="text-blue-600 hover:underline ml-1 font-semibold">
-              ลงชื่่อเข้าใช้
-            </Link>
-          </p>
+          มีบัญชีแล้ว{' '}
+          <Link to="/" className="text-blue-600 hover:underline ml-1 font-semibold">
+            ลงชื่่อเข้าใช้
+          </Link>
+        </p>
       </form>
     </div>
   );

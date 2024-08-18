@@ -147,6 +147,14 @@ export default function AdminHome() {
               <p className="py-4">จำนวน: {selectedItem.amount}</p>
               <p className="py-4">ที่อยู่: {getAddressDetails(selectedItem.addressId)}</p>
               <p className="py-4">เวลา: {format(new Date(selectedItem.createdAt), 'dd/MM/yyyy HH:mm:ss', { locale: th })} น.</p>
+              <div className="flex justify-center mt-4">
+          <button
+            className="bg-blue-600 text-white px-4 py-2 rounded-xl"
+            
+          >
+            ยืนยัน
+          </button>
+        </div>
             </div>
           ) : (
             <p className="py-4">กรุณาเลือกคำสั่งซื้อเพื่อดูรายละเอียด</p>

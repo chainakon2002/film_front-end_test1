@@ -86,17 +86,18 @@ export default function AdminProduct() {
           />
         </label>
         <label className="form-control w-full max-w-xs">
-          <div className="label">
-            <span className="label-text">รายละเอียด</span>
-          </div>
-          <input
-            type="text"
-            className="input input-bordered w-full max-w-xs"
-            name="description"
-            value={input.description}
-            onChange={hdlChange}
-          />
-        </label>
+  <div className="label">
+    <span className="label-text">รายละเอียด</span>
+  </div>
+  <textarea
+    className="textarea textarea-bordered w-full max-w-xs"
+    name="description"
+    value={input.description}
+    onChange={hdlChange}
+    rows={4} // You can adjust this to your preferred number of visible rows
+  />
+</label>
+
         <label className="form-control w-full max-w-xs">
           <div className="label">
             <span className="label-text">ตำแหน่งรูปภาพ</span>
